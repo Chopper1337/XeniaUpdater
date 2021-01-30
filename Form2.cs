@@ -58,7 +58,7 @@ namespace XeniaUpdater
                         "timeout 3\n" +
                         "del XeniaUpdater.exe\n" +
                         "move XeniaUpdater.Latest.exe XeniaUpdater.exe\n" +
-                        "pause");
+                        "del UpdateDownloaded.bat");
             }            
         }
     }
