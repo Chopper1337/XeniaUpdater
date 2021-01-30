@@ -3,12 +3,41 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace XeniaUpdater
 {
     public partial class Form1 : Form
     {
+        //Important strings
+        const string masterURL = "https://ci.appveyor.com/api/projects/benvanik/xenia/artifacts/xenia_master.zip?branch=master&job=Configuration%3A%20Release&pr=false";
+        const string canaryURL = "https://ci.appveyor.com/api/projects/chris-hawley/xenia-canary/artifacts/xenia_canary.zip?branch=canary_new&job=Configuration:%20Release&pr=false";
+        const string masterEXE = "xenia.exe";
+        const string canaryEXE = "xenia_canary.exe";
+        const string masterProc = "xenia";
+        const string canaryProc = "xenia_canary";
+
+        void buttonsOff()
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+        }
+        
+        void buttonsOn()
+        {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+        }
+
 
         public Form1()
         {
@@ -16,12 +45,14 @@ namespace XeniaUpdater
             InitializeComponent();
         }
 
+        //Method which accepts a URL and branch in string form.
         public void downloadUpdate(string zipUrl, string branch)
         {
+            buttonsOff();
             //Using a web client, do the following
             using (WebClient webClient = new WebClient())
             {
-                //Delete the old zip
+                //Deletes any existing "old" zip of the branch you are going to download
                 try
                 {
                     File.Delete($"xenia_{branch}_old.zip");
@@ -32,7 +63,10 @@ namespace XeniaUpdater
                 }
 
 
-                //Try rename current version to old and delete current version
+                /* Creates a backup of your last downloaded version
+                 * Then starts a cleanup to remove uneeded files
+                 * Removes executables according to the branch you'll be updating
+                 */
                 try
                 {
                     File.Move($"xenia_{branch}.zip", $"xenia_{branch}_old.zip");
@@ -41,13 +75,13 @@ namespace XeniaUpdater
                     File.Delete("xenia.log");
                     if (branch == "master")
                     {
-                        File.Delete("xenia.exe");
+                        File.Delete(masterEXE);
                         File.Delete("xenia_old.exe");
                         File.Delete("xenia.pdb");
                     }
                     else
                     {
-                        File.Delete("xenia_canary.exe");
+                        File.Delete(canaryEXE);
                         File.Delete("xenia_canary_old.exe");
                         File.Delete("xenia_canary.pdb");
                     }
@@ -56,7 +90,7 @@ namespace XeniaUpdater
                 {
                 }
 
-                //Download the file xenia_master.zip from the url supplied in the string zipUrl
+                //Using the web client, download from the given URL, the xenia zip, named according to selected branch
                 webClient.DownloadFileAsync(new Uri(zipUrl), $"xenia_{branch}.zip");
 
                 //For each change in progrress, output progress to the wc_DownloadProgressChanged method
@@ -85,43 +119,18 @@ namespace XeniaUpdater
                 //If the download progress is 100%, do the finalize method
                 if (percentInt == 100)
                 {
-                    finalize();
+                    finalizeAsync();
 
                     //Add one to the int to prevent the finalize method being called over and over
                     percentInt++;
                 }
             }
 
-            //Finalize
-            void finalize()
+            //Extracts the zip to the current directory
+            //In try/catch to surpress potential errors
+            void tryExtractZip(string branch1)
             {
-                if (branch == "master")
-                {
-                    //For each process with the name "xenia"
-                    foreach (var process in Process.GetProcessesByName("xenia"))
-                    {
-                        //Kill process
-                        process.Kill();
-                    }
-                }
-                else
-                {
-                    //For each process with the name "xenia"
-                    foreach (var process in Process.GetProcessesByName("xenia-canary"))
-                    {
-                        //Kill process
-                        process.Kill();
-                    }
-                }
-                    //For each process with the name "xenia"
-                    foreach (var process in Process.GetProcessesByName("xenia"))
-                {
-                    //Kill process
-                    process.Kill();
-                }
-
-                //Extracts the zip to the current directory
-                //In try/catch to surpress potential errors
+                branch = branch1;
                 try
                 {
                     ZipFile.ExtractToDirectory($"xenia_{branch}.zip", ".");
@@ -129,36 +138,83 @@ namespace XeniaUpdater
                 catch (Exception)
                 {
                 }
+            }
 
-                if(branch == "master")
+            //Finalize
+            async Task finalizeAsync()
+            {
+                //If you're downloading master branch, kill all currently running "xenia" processes
+                if (branch == "master")
                 {
-                    //Once all is done, start Xenia.
-                    Process.Start("xenia.exe");
+                    //For each process with the name of the master branch
+                    foreach (var process in Process.GetProcessesByName(masterProc))
+                    {
+                        //Kill process
+                        process.Kill();
+                    }
                 }
+                //Else you're downloading the canary branch, so kill all currently running "xenia_canary" processes
                 else
                 {
-                    //Once all is done, start Xenia.
-                    Process.Start("xenia-canary.exe");
+                    //For each process with the name of the canary brancc
+                    foreach (var process in Process.GetProcessesByName(canaryProc))
+                    {
+                        //Kill process
+                        process.Kill();
+                    }
                 }
-                
 
-                //Exit
-                this.Close();
+                //Try extraction
+                tryExtractZip(branch);
+
+                //If branch is master, check the EXE has extracted and start it
+                if (branch == "master")
+                {
+                    if (File.Exists(masterEXE))
+                    {
+                        Process.Start(masterEXE);
+                        this.Close();
+                    }
+                    else
+                    //If the EXE is not yet extracted
+                    {
+                        buttonsOn();
+                        MessageBox.Show("You may want to click the F button to force zip extraction","Unusual happenings...");
+                    }
+                    
+                }
+                //Else branch is canary, check the EXE has extracted and start it
+                else
+                {
+                    if (File.Exists(canaryEXE))
+                    {
+                        Process.Start(canaryEXE);
+                        this.Close();
+                    }
+                    //If it isn't extracted
+                    else
+                    {
+                        buttonsOn();
+                        MessageBox.Show("You may want to click the F button to force zip extraction", "Unusual happenings...");
+                    }
+                    
+                }
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            downloadUpdate("https://ci.appveyor.com/api/projects/benvanik/xenia/artifacts/xenia_master.zip?branch=master&job=Configuration%3A%20Release&pr=false", "master");
+            //Starts updating for master branch using variable declared at start of program
+            downloadUpdate(masterURL, "master");
         }
 
+        //Tries to start master xenia executable, if fail, show error
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                //Start Xenia.exe
-                Process.Start("xenia.exe");
-                //Exit
+                Process.Start(masterEXE);
                 this.Close();
             }
             catch (Exception)
@@ -167,30 +223,53 @@ namespace XeniaUpdater
             }
         }
 
+        //Tries to start canary xenia executable, if fail, show error
         private void button3_Click(object sender, EventArgs e)
         {
             try
             {
-                //Start Xenia.exe
-                Process.Start("xenia-canary.exe");
-                //Exit
+                Process.Start(canaryEXE);
                 this.Close();
             }
             catch (Exception)
             {
-                MessageBox.Show("Something isn't right, could not start xenia_canary.exe :(", "Error");
+                MessageBox.Show("Something isn't right, could not start xenia-canary.exe :(", "Error");
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            downloadUpdate("https://ci.appveyor.com/api/projects/chris-hawley/xenia-canary/artifacts/xenia_canary.zip?branch=canary_new&job=Configuration:%20Release&pr=false", "canary");
+            //Starts updating for canary branch using variable declared at start of program
+            downloadUpdate(canaryURL, "canary");
         }
 
+        //Info button, shows form2
         private void button5_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             f2.ShowDialog(); // Shows Form2
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                File.Delete("LICENSE");
+                ZipFile.ExtractToDirectory($"xenia_master.zip", ".");
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                File.Delete("LICENSE");
+                ZipFile.ExtractToDirectory($"xenia_canary.zip", ".");
+            }
+            catch (Exception)
+            {
+            }
+
+            MessageBox.Show("An attempt to forcefully extract both zips was made", "Done");
         }
     }
 }
