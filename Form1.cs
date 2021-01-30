@@ -11,13 +11,13 @@ namespace XeniaUpdater
     {
         public Form1()
         {
-            //Some default form thing idk what this does but it's added automatically :))
+            //Go go go!
             InitializeComponent();
 
             //The URL to download the latest release of Xenia
             const string zipUrl = "https://ci.appveyor.com/api/projects/benvanik/xenia/artifacts/xenia_master.zip?branch=master&job=Configuration%3A%20Release&pr=false";
 
-            //Using a web client, dow the following
+            //Using a web client, do the following
             using (WebClient webClient = new WebClient())
             {
                 //Delete the old zip
