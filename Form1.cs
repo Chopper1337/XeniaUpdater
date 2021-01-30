@@ -252,24 +252,8 @@ namespace XeniaUpdater
 
         private void button6_Click(object sender, EventArgs e)
         {
-            try
-            {
-                File.Delete("LICENSE");
-                ZipFile.ExtractToDirectory($"xenia_master.zip", ".");
-            }
-            catch (Exception)
-            {
-            }
-            try
-            {
-                File.Delete("LICENSE");
-                ZipFile.ExtractToDirectory($"xenia_canary.zip", ".");
-            }
-            catch (Exception)
-            {
-            }
-
-            MessageBox.Show("An attempt to forcefully extract both zips was made", "Done");
+            Form3 f3 = new Form3();
+            f3.ShowDialog(); // Shows Form3
         }
     }
 }
