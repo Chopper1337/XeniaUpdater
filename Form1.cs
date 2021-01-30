@@ -107,7 +107,7 @@ namespace XeniaUpdater
                 else
                 {
                     //For each process with the name "xenia"
-                    foreach (var process in Process.GetProcessesByName("xenia_canary"))
+                    foreach (var process in Process.GetProcessesByName("xenia-canary"))
                     {
                         //Kill process
                         process.Kill();
@@ -138,7 +138,7 @@ namespace XeniaUpdater
                 else
                 {
                     //Once all is done, start Xenia.
-                    Process.Start("xenia_canary.exe");
+                    Process.Start("xenia-canary.exe");
                 }
                 
 
@@ -172,7 +172,7 @@ namespace XeniaUpdater
             try
             {
                 //Start Xenia.exe
-                Process.Start("xenia_canary.exe");
+                Process.Start("xenia-canary.exe");
                 //Exit
                 this.Close();
             }
