@@ -178,7 +178,7 @@ namespace XeniaUpdater
             }
             catch (Exception)
             {
-                MessageBox.Show("Something isn't right, could not start xenia.exe :(", "Error");
+                MessageBox.Show("Something isn't right, could not start xenia_canary.exe :(", "Error");
             }
         }
 
