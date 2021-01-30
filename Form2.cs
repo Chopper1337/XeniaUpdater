@@ -55,7 +55,9 @@ namespace XeniaUpdater
                 using (FileStream strm = File.Create("UpdateDownloaded.bat"))
                 using (StreamWriter sw = new StreamWriter(strm))
                     sw.WriteLine(
-                        "timeout 3\n" +
+                        "@echo off\n"+
+                        "echo Updating Xenia Updater :)\n" +
+                        "timeout 2\n" +
                         "del XeniaUpdater.exe\n" +
                         "move XeniaUpdater.Latest.exe XeniaUpdater.exe\n" +
                         "del UpdateDownloaded.bat");
