@@ -1,0 +1,10 @@
+C:\Users\Joseph\source\repos\XeniaUpdater\bin\Debug\XeniaUpdater.exe.config
+C:\Users\Joseph\source\repos\XeniaUpdater\bin\Debug\XeniaUpdater.exe
+C:\Users\Joseph\source\repos\XeniaUpdater\bin\Debug\XeniaUpdater.pdb
+C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.Properties.Resources.resources
+C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csproj.GenerateResource.cache
+C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csproj.CoreCompileInputs.cache
+C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.exe
+C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.pdb
+C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.Form1.resources
+C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csprojAssemblyReference.cache
