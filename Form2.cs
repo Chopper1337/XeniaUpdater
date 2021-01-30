@@ -39,12 +39,27 @@ namespace XeniaUpdater
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string date = DateTime.Now.ToString($"dd.MM.yy_hh.mm.ss");
+            //string date = DateTime.Now.ToString($"dd.MM.yy_hh.mm.ss");
+            //string path = Directory.GetCurrentDirectory();
 
             using (WebClient webClient = new WebClient())
             {
-                webClient.DownloadFileAsync(new Uri("https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Release/XeniaUpdater.exe"), $"XeniaUpdater.{date}.exe");
+                webClient.DownloadFileAsync(new Uri("https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Debug/XeniaUpdater.exe"), $"XeniaUpdater.Latest.exe");
             }
+
+            if (File.Exists($"XeniaUpdater.Latest.exe"))
+            {
+                MessageBox.Show($"Latest version downloaded, please restart!","Latest version downloaded :)");
+                //Process.Start(path);
+
+                using (FileStream strm = File.Create("UpdateDownloaded.bat"))
+                using (StreamWriter sw = new StreamWriter(strm))
+                    sw.WriteLine(
+                        "timeout 3\n" +
+                        "del XeniaUpdater.exe\n" +
+                        "move XeniaUpdater.Latest.exe XeniaUpdater.exe\n" +
+                        "pause");
+            }            
         }
     }
 }

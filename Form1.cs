@@ -18,6 +18,7 @@ namespace XeniaUpdater
         const string masterProc = "xenia";
         const string canaryProc = "xenia_canary";
 
+
         void buttonsOff()
         {
             button1.Enabled = false;
@@ -43,6 +44,12 @@ namespace XeniaUpdater
         {
             //Go go go!
             InitializeComponent();
+
+            if (File.Exists("UpdateDownloaded.bat"))
+            {
+                Process.Start("UpdateDownloaded.bat");
+                this.Close();
+            }
         }
 
         //Method which accepts a URL and branch in string form.
