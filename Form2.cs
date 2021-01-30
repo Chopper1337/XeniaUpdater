@@ -36,5 +36,15 @@ namespace XeniaUpdater
             Process.Start("https://github.com/Chopper1337/XeniaUpdater");
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string date = DateTime.Now.ToString($"dd.MM.yy_hh.mm.ss");
+
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFileAsync(new Uri("https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Release/XeniaUpdater.exe"), $"XeniaUpdater.{date}.exe");
+            }
+        }
     }
 }
