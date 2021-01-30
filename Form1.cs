@@ -9,11 +9,15 @@ namespace XeniaUpdater
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             //Go go go!
             InitializeComponent();
+        }
 
+        public void downloadUpdate()
+        {
             //The URL to download the latest release of Xenia
             const string zipUrl = "https://ci.appveyor.com/api/projects/benvanik/xenia/artifacts/xenia_master.zip?branch=master&job=Configuration%3A%20Release&pr=false";
 
@@ -39,7 +43,7 @@ namespace XeniaUpdater
 
                 //Download the file xenia_master.zip from the url supplied in the string zipUrl
                 webClient.DownloadFileAsync(new Uri(zipUrl), "xenia_master.zip");
-                
+
                 //For each change in progrress, output progress to the wc_DownloadProgressChanged method
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(wc_DownloadProgressChanged);
 
@@ -99,6 +103,26 @@ namespace XeniaUpdater
 
                 //Exit
                 this.Close();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            downloadUpdate();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Start Xenia.exe
+                Process.Start("xenia.exe");
+                //Exit
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something isn't right, could not start xenia.exe :(", "Error");
             }
         }
     }
