@@ -16,33 +16,48 @@ namespace XeniaUpdater
             InitializeComponent();
         }
 
-        public void downloadUpdate()
+        public void downloadUpdate(string zipUrl, string branch)
         {
-            //The URL to download the latest release of Xenia
-            const string zipUrl = "https://ci.appveyor.com/api/projects/benvanik/xenia/artifacts/xenia_master.zip?branch=master&job=Configuration%3A%20Release&pr=false";
-
             //Using a web client, do the following
             using (WebClient webClient = new WebClient())
             {
                 //Delete the old zip
-                File.Delete("xenia_master_old.zip");
+                try
+                {
+                    File.Delete($"xenia_{branch}_old.zip");
+                }
+                catch (Exception)
+                {
+
+                }
+
 
                 //Try rename current version to old and delete current version
                 try
                 {
-                    File.Move("xenia_master.zip", "xenia_master_old.zip");
-                    File.Delete("xenia.pdb");
+                    File.Move($"xenia_{branch}.zip", $"xenia_{branch}_old.zip");
+                    
                     File.Delete("LICENSE");
                     File.Delete("xenia.log");
-                    File.Delete("xenia.exe");
-                    File.Delete("xenia_old.exe");
+                    if (branch == "master")
+                    {
+                        File.Delete("xenia.exe");
+                        File.Delete("xenia_old.exe");
+                        File.Delete("xenia.pdb");
+                    }
+                    else
+                    {
+                        File.Delete("xenia_canary.exe");
+                        File.Delete("xenia_canary_old.exe");
+                        File.Delete("xenia_canary.pdb");
+                    }
                 }
                 catch (Exception)
                 {
                 }
 
                 //Download the file xenia_master.zip from the url supplied in the string zipUrl
-                webClient.DownloadFileAsync(new Uri(zipUrl), "xenia_master.zip");
+                webClient.DownloadFileAsync(new Uri(zipUrl), $"xenia_{branch}.zip");
 
                 //For each change in progrress, output progress to the wc_DownloadProgressChanged method
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(wc_DownloadProgressChanged);
@@ -80,9 +95,26 @@ namespace XeniaUpdater
             //Finalize
             void finalize()
             {
-
-                //For each process with the name "xenia"
-                foreach (var process in Process.GetProcessesByName("xenia"))
+                if (branch == "master")
+                {
+                    //For each process with the name "xenia"
+                    foreach (var process in Process.GetProcessesByName("xenia"))
+                    {
+                        //Kill process
+                        process.Kill();
+                    }
+                }
+                else
+                {
+                    //For each process with the name "xenia"
+                    foreach (var process in Process.GetProcessesByName("xenia_canary"))
+                    {
+                        //Kill process
+                        process.Kill();
+                    }
+                }
+                    //For each process with the name "xenia"
+                    foreach (var process in Process.GetProcessesByName("xenia"))
                 {
                     //Kill process
                     process.Kill();
@@ -92,14 +124,23 @@ namespace XeniaUpdater
                 //In try/catch to surpress potential errors
                 try
                 {
-                    ZipFile.ExtractToDirectory("xenia_master.zip", ".");
+                    ZipFile.ExtractToDirectory($"xenia_{branch}.zip", ".");
                 }
                 catch (Exception)
                 {
                 }
 
-                //Once all is done, start Xenia.
-                Process.Start("xenia.exe");
+                if(branch == "master")
+                {
+                    //Once all is done, start Xenia.
+                    Process.Start("xenia.exe");
+                }
+                else
+                {
+                    //Once all is done, start Xenia.
+                    Process.Start("xenia_canary.exe");
+                }
+                
 
                 //Exit
                 this.Close();
@@ -108,7 +149,7 @@ namespace XeniaUpdater
 
         private void button1_Click(object sender, EventArgs e)
         {
-            downloadUpdate();
+            downloadUpdate("https://ci.appveyor.com/api/projects/benvanik/xenia/artifacts/xenia_master.zip?branch=master&job=Configuration%3A%20Release&pr=false", "master");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -124,6 +165,32 @@ namespace XeniaUpdater
             {
                 MessageBox.Show("Something isn't right, could not start xenia.exe :(", "Error");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Start Xenia.exe
+                Process.Start("xenia_canary.exe");
+                //Exit
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something isn't right, could not start xenia.exe :(", "Error");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            downloadUpdate("https://ci.appveyor.com/api/projects/chris-hawley/xenia-canary/artifacts/xenia_canary.zip?branch=canary_new&job=Configuration:%20Release&pr=false", "canary");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.ShowDialog(); // Shows Form2
         }
     }
 }

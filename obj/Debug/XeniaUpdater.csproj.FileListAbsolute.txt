@@ -8,3 +8,4 @@ C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.exe
 C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.pdb
 C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.Form1.resources
 C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csprojAssemblyReference.cache
+C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.Form2.resources
