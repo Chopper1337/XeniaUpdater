@@ -53,7 +53,7 @@ namespace XeniaUpdater
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(42, 33);
+            this.label2.Location = new System.Drawing.Point(42, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace XeniaUpdater
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(21, 54);
+            this.label3.Location = new System.Drawing.Point(21, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace XeniaUpdater
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 74);
+            this.button1.Location = new System.Drawing.Point(23, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 3;
@@ -86,7 +86,7 @@ namespace XeniaUpdater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(155, 109);
+            this.ClientSize = new System.Drawing.Size(155, 96);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
