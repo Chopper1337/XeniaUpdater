@@ -28,7 +28,7 @@ namespace XeniaUpdater
             button5.Enabled = false;
             button6.Enabled = false;
         }
-        
+
         void buttonsOn()
         {
             button1.Enabled = true;
@@ -38,7 +38,6 @@ namespace XeniaUpdater
             button5.Enabled = true;
             button6.Enabled = true;
         }
-
 
         public Form1()
         {
@@ -77,7 +76,7 @@ namespace XeniaUpdater
                 try
                 {
                     File.Move($"xenia_{branch}.zip", $"xenia_{branch}_old.zip");
-                    
+
                     File.Delete("LICENSE");
                     File.Delete("xenia.log");
                     if (branch == "master")
@@ -186,9 +185,9 @@ namespace XeniaUpdater
                     //If the EXE is not yet extracted
                     {
                         buttonsOn();
-                        MessageBox.Show("You may want to click the F button to force zip extraction","Unusual happenings...");
+                        MessageBox.Show("You may want to click the F button to force zip extraction", "Unusual happenings...");
                     }
-                    
+
                 }
                 //Else branch is canary, check the EXE has extracted and start it
                 else
@@ -204,7 +203,7 @@ namespace XeniaUpdater
                         buttonsOn();
                         MessageBox.Show("You may want to click the F button to force zip extraction", "Unusual happenings...");
                     }
-                    
+
                 }
             }
 
