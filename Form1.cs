@@ -51,7 +51,7 @@ namespace XeniaUpdater
                 this.Close();
             }
 
-            this.Activate();
+            this.BringToFront();
         }
 
         //Method which accepts a URL and branch in string form.
