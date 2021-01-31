@@ -41,7 +41,7 @@ namespace XeniaUpdater
         {
             using (WebClient webClient = new WebClient())
             {
-                webClient.DownloadFileAsync(new Uri("https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Release/XeniaUpdater.exe"), $"XeniaUpdater.Latest.exe");
+                webClient.DownloadFileAsync(new Uri("https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Debug/XeniaUpdater.exe"), $"XeniaUpdater.Latest.exe");
             }
 
             if (File.Exists($"XeniaUpdater.Latest.exe"))
