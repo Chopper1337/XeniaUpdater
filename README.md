@@ -1,10 +1,15 @@
 # Unofficial Xenia Updater
-Small program I made to download, extract and start the latest release of Xenia.
+Small program made to manage Xenia emulator and its versions.
 
-Do not use this every time you start Xenia, only when you wish to update :)
 
 # [Download stable release here](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Release/XeniaUpdater.exe)
 
+# Features
+
+* Compatible with master and canary branches of Xenia
+* Downloads, extracts and starts Xenia in one click
+* Creates a backup of the last downloaded version of Xenia (xenia_master.zip and/or xenia_canary.zip)
+* Updating for the updater itself, no need to open a browser
 
 [Download testing release here](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Debug/XeniaUpdater.exe)
 
