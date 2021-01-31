@@ -50,6 +50,8 @@ namespace XeniaUpdater
                 Process.Start("UpdateDownloaded.bat");
                 this.Close();
             }
+
+            this.Activate();
         }
 
         //Method which accepts a URL and branch in string form.
