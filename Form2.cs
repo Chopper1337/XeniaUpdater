@@ -10,7 +10,7 @@ namespace XeniaUpdater
     {
         // VERY IMPORTANT! \\
         // Sets the branch the updater should update itself using, can be "Release" or "Debug"
-        string updaterBranch = "Debug";
+        private static string updaterBranch = "Debug";
         public Form2()
         {
             InitializeComponent();

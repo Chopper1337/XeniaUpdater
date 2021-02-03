@@ -42,11 +42,17 @@ namespace XeniaUpdater
         {
             //Go go go!
             InitializeComponent();
+            bool updateBatExists = File.Exists("UpdateDownloaded.bat");
+            bool updateEXEExists = File.Exists("XeniaUpdater.Latest.exe");
 
-            if (File.Exists("UpdateDownloaded.bat"))
+            if (updateBatExists)
             {
                 Process.Start("UpdateDownloaded.bat");
                 this.Close();
+            }
+            else if(!updateBatExists && updateEXEExists)
+            {
+                File.Delete("XeniaUpdater.Latest.exe");
             }
         }
 
