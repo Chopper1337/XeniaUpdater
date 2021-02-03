@@ -45,18 +45,23 @@ namespace XeniaUpdater
         {
             //Go go go!
             InitializeComponent();
+            //Booleans to check for the existance of the update batch file and a newly downloaded version of the updater from GitHub
             bool updateBatExists = File.Exists("UpdateDownloaded.bat");
             bool updateEXEExists = File.Exists("XeniaUpdater.Latest.exe");
 
-            if (updateBatExists)
+            //If the batch file exists and the new executable exists, start the batch file
+            if (updateBatExists && updateEXEExists)
             {
                 Process.Start("UpdateDownloaded.bat");
                 this.Close();
             }
+            //Else, if the batch file does not exist but the updated executable does, delete the executable.
+            //Reason behind this being that this executable is useless without the batch file.
             else if(!updateBatExists && updateEXEExists)
             {
                 File.Delete("XeniaUpdater.Latest.exe");
             }
+
         }
 
         //Method which accepts a URL and branch in string form.
