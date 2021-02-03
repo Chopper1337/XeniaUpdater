@@ -67,7 +67,7 @@ namespace XeniaUpdater
                         "echo Updating Xenia Updater :)\n" +
                         "timeout 2\n" +
                         $"del \"{currentExecutableFullPathName}\"\n" +
-                        $"XeniaUpdater has been updated under the name {currentExecutableName}. This CMD window will not appear on next start." +
+                        $"echo XeniaUpdater has been updated under the name {currentExecutableName}. This CMD window will not appear on next start.\n" +
                         $"move XeniaUpdater.Latest.exe \"{currentExecutableFullPathName}\"\n" +
                         $"{currentExecutableName}\n" +
                         "del UpdateDownloaded.bat");
