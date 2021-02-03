@@ -200,7 +200,8 @@ namespace XeniaUpdater
                         {
                             this.Close();
                         }
-                        
+                        buttonsOn();
+
                     }
                     else
                     //If the EXE is not yet extracted
@@ -220,6 +221,7 @@ namespace XeniaUpdater
                         {
                             this.Close();
                         }
+                        buttonsOn();
                     }
                     //If it isn't extracted
                     else
