@@ -18,7 +18,6 @@ namespace XeniaUpdater
         const string masterProc = "xenia";
         const string canaryProc = "xenia_canary";
 
-
         void buttonsOff()
         {
             button1.Enabled = false;
@@ -179,7 +178,11 @@ namespace XeniaUpdater
                     if (File.Exists(masterEXE))
                     {
                         Process.Start(masterEXE);
-                        this.Close();
+                        if (!keepOpenBx.Checked)
+                        {
+                            this.Close();
+                        }
+                        
                     }
                     else
                     //If the EXE is not yet extracted
@@ -195,7 +198,10 @@ namespace XeniaUpdater
                     if (File.Exists(canaryEXE))
                     {
                         Process.Start(canaryEXE);
-                        this.Close();
+                        if (!keepOpenBx.Checked)
+                        {
+                            this.Close();
+                        }
                     }
                     //If it isn't extracted
                     else
@@ -221,7 +227,10 @@ namespace XeniaUpdater
             try
             {
                 Process.Start(masterEXE);
-                this.Close();
+                if (!keepOpenBx.Checked)
+                        {
+                            this.Close();
+                        }
             }
             catch (Exception)
             {
@@ -235,7 +244,10 @@ namespace XeniaUpdater
             try
             {
                 Process.Start(canaryEXE);
-                this.Close();
+                if (!keepOpenBx.Checked)
+                {
+                    this.Close();
+                }
             }
             catch (Exception)
             {

@@ -8,9 +8,14 @@ namespace XeniaUpdater
 {
     public partial class Form2 : Form
     {
+        // VERY IMPORTANT! \\
+        // Sets the branch the updater should update itself using, can be "Release" or "Debug"
+        string updaterBranch = "Debug";
         public Form2()
         {
             InitializeComponent();
+            label4.Text = $"Branch: {updaterBranch}";
+            label4.AutoSize = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,7 +45,7 @@ namespace XeniaUpdater
         {
             using (WebClient webClient = new WebClient())
             {
-                webClient.DownloadFileAsync(new Uri("https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Release/XeniaUpdater.exe"), $"XeniaUpdater.Latest.exe");
+                webClient.DownloadFileAsync(new Uri("https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/" + updaterBranch + "/XeniaUpdater.exe"), "XeniaUpdater.Latest.exe");
             }
 
             if (File.Exists($"XeniaUpdater.Latest.exe"))
