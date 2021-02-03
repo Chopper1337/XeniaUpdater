@@ -72,6 +72,7 @@ namespace XeniaUpdater
                         $"{currentExecutableName}\n" +
                         "del UpdateDownloaded.bat");
                 }
+                this.Close();
             }
         }
     }
