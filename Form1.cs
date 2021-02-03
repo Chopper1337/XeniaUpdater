@@ -61,6 +61,10 @@ namespace XeniaUpdater
             {
                 File.Delete("XeniaUpdater.Latest.exe");
             }
+            else if(updateBatExists && !updateEXEExists)
+            {
+                File.Delete("UpdateDownloaded.bat");
+            }
 
         }
 
