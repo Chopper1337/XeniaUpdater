@@ -4,7 +4,7 @@ Small program made to manage Xenia emulator and its versions.
 # Releases
 
 * [**Stable**](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Release/XeniaUpdater.exe)
-* [Testing](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Debug/XeniaUpdater.exe)
+* [Debug](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Debug/XeniaUpdater.exe)
 
 # Features
 
@@ -28,9 +28,9 @@ The "forceful extraction" option exists for the case the the updater does not ex
 
 This code is not written in the most efficient way, it is probably possible to divide this into a few methods which are applicable to both Xenia Master and Xenia Canary, giving the opportunity to reuse code. 
 
-# Note for "Testing" release
+# Note for "Debug" release
 
-There is no guarantee of stability with the testing release.
+There is no guarantee of stability with the debug release.
 
 If you run into any issues, message me on Discord **[IRB] Chopper#4291**.
 Try provide as much info as possible, screenshot of when the issue occurred and a screenshot of the directory the updater was in and so on.
