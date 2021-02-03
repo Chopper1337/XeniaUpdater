@@ -67,7 +67,7 @@ namespace XeniaUpdater
                         "timeout 2\n" +
                         $"del \"{currentExecutableName}\"\n" +
                         $"move XeniaUpdater.Latest.exe \"{currentExecutableName}\"\n" +
-                        $"start \"{currentExecutableName}\"\n" +
+                        $"start {currentExecutableName}\n" +
                         "del UpdateDownloaded.bat");
                 }
             }
