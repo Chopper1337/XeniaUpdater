@@ -8,9 +8,11 @@ namespace XeniaUpdater
 {
     public partial class Form2 : Form
     {
-        // VERY IMPORTANT! \\
-        // Sets the branch the updater should update itself using, can be "Release" or "Debug"
+        //CHANGE THE updaterBranch STRING TO THE CORRECT BRANCH BEFORE PUSING UPDATE!
+        //Sets the branch the updater should update itself using, can be "Release" or "Debug"
         private static string updaterBranch = "Debug";
+
+
         public Form2()
         {
             InitializeComponent();

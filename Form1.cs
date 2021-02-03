@@ -8,6 +8,8 @@ using System.Windows.Forms;
 
 namespace XeniaUpdater
 {
+    //CHANGE THE updaterBranch STRING TO THE CORRECT BRANCH IN FORM2.CS BEFORE PUSING UPDATE!
+
     public partial class Form1 : Form
     {
         //Important strings
