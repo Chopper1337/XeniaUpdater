@@ -12,10 +12,14 @@ namespace XeniaUpdater
 
     public partial class Form1 : Form
     {
+        //Gets the current name of the executable, for the chance that it could be renamed
+        string currentExecutableFullPathName = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+        string currentExecutableName = System.Diagnostics.Process.GetCurrentProcess().MainModule.ModuleName;
+
         //Important strings
         //updaterBranch on Form2.cs is also important :)
         const string masterURL = "https://ci.appveyor.com/api/projects/benvanik/xenia/artifacts/xenia_master.zip?branch=master&job=Configuration%3A%20Release&pr=false";
-        const string canaryURL = "https://ci.appveyor.com/api/projects/chris-hawley/xenia-canary/artifacts/xenia_canary.zip?branch=canary_new&job=Configuration:%20Release&pr=false";
+        const string canaryURL = "https://github.com/xenia-canary/xenia-canary/releases/latest/download/xenia_canary.zip";
         const string masterEXE = "xenia.exe";
         const string canaryEXE = "xenia_canary.exe";
         const string masterProc = "xenia";
@@ -292,6 +296,19 @@ namespace XeniaUpdater
         {
             Form3 f3 = new Form3();
             f3.ShowDialog(); // Shows Form3
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Soon...","NYI");
+            //if (File.Exists("xenia.log"))
+            //{
+                
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Log file not found", "Error");
+            //}
         }
     }
 }
