@@ -80,14 +80,14 @@ namespace XeniaUpdater
                         ":gotAdmin\n" +
                         "pushd \" % CD % \"\n" +
                         "CD /D \" % ~dp0\"\n" +
-                        ":-------------------------------------\n" +
                         "echo Updating Xenia Updater :)\n" +
                         "timeout 2\n" +
                         $"del \"{currentExecutableFullPathName}\"\n" +
                         $"echo XeniaUpdater has been updated under the name {currentExecutableName}.\necho This CMD window will not appear on next start and can be closed :)\n" +
                         $"move XeniaUpdater.Latest.exe \"{currentExecutableFullPathName}\"\n" +
                         $"{currentExecutableName}\n" +
-                        "del UpdateDownloaded.bat");
+                        "del UpdateDownloaded.bat\n" +
+                        ":-------------------------------------");
                 }
                 this.Close();
             }
