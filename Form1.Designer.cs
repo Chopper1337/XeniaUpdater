@@ -120,7 +120,7 @@
             // 
             this.keepOpenBx.AutoSize = true;
             this.keepOpenBx.CheckAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.keepOpenBx.Location = new System.Drawing.Point(78, 93);
+            this.keepOpenBx.Location = new System.Drawing.Point(77, 93);
             this.keepOpenBx.Name = "keepOpenBx";
             this.keepOpenBx.Size = new System.Drawing.Size(78, 17);
             this.keepOpenBx.TabIndex = 8;
