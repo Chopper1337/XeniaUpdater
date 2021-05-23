@@ -72,6 +72,8 @@ namespace XeniaUpdater_C
             masterStartBTN.Enabled = enabled;
             canaryUpdateBTN.Enabled = enabled;
             canaryStartBTN.Enabled = enabled;
+            canaryExUpdateBTN.Enabled = enabled;
+            canaryExStartBTN.Enabled = enabled;
         }
 
         private void button1_Click(object sender, System.EventArgs e)
