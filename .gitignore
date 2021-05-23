@@ -2,3 +2,7 @@
 obj/Debug/XeniaUpdater.exe
 obj/Debug/XeniaUpdater.exe
 obj/Debug/XeniaUpdater.pdb
+bin/Debug/xenia.log
+bin/Debug/XeniaCanary/LastUpdate/xenia_canary.zip
+bin/Debug/XeniaCanary/xenia_canary.exe
+bin/Debug/XeniaCanary/xenia_canary.zip
