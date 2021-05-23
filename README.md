@@ -3,6 +3,8 @@ Small program made to manage Xenia emulator and its versions.
 
 This program is being re-written because looking back on the code for it now, I'm surprised it worked. There is no ETA on the new version but it will support more builds of Xenia and if, in future, someone else would want to maintain the project, the new version will be easier to work with.
 
+[Link to new version](https://github.com/Chopper1337/XeniaUpdater/tree/Rewrite)
+
 # Releases
 
 * [**Stable**](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Release/XeniaUpdater.exe)
