@@ -38,9 +38,9 @@ namespace XeniaUpdater_C
             this.canaryUpdateBTN = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.percentageLBL = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.canaryExStartBTN = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.canaryExUpdateBTN = new System.Windows.Forms.Button();
             this.infoBTN = new System.Windows.Forms.Button();
             this.updateBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -123,15 +123,15 @@ namespace XeniaUpdater_C
             this.percentageLBL.Text = "0%";
             this.percentageLBL.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button1
+            // canaryExStartBTN
             // 
-            this.button1.Location = new System.Drawing.Point(190, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.canaryExStartBTN.Location = new System.Drawing.Point(190, 65);
+            this.canaryExStartBTN.Name = "canaryExStartBTN";
+            this.canaryExStartBTN.Size = new System.Drawing.Size(69, 23);
+            this.canaryExStartBTN.TabIndex = 11;
+            this.canaryExStartBTN.Text = "Start";
+            this.canaryExStartBTN.UseVisualStyleBackColor = true;
+            this.canaryExStartBTN.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label3
             // 
@@ -142,15 +142,15 @@ namespace XeniaUpdater_C
             this.label3.TabIndex = 10;
             this.label3.Text = "Xenia Canary Ex";
             // 
-            // button2
+            // canaryExUpdateBTN
             // 
-            this.button2.Location = new System.Drawing.Point(115, 65);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.canaryExUpdateBTN.Location = new System.Drawing.Point(115, 65);
+            this.canaryExUpdateBTN.Name = "canaryExUpdateBTN";
+            this.canaryExUpdateBTN.Size = new System.Drawing.Size(69, 23);
+            this.canaryExUpdateBTN.TabIndex = 9;
+            this.canaryExUpdateBTN.Text = "Update";
+            this.canaryExUpdateBTN.UseVisualStyleBackColor = true;
+            this.canaryExUpdateBTN.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // infoBTN
             // 
@@ -179,9 +179,9 @@ namespace XeniaUpdater_C
             this.ClientSize = new System.Drawing.Size(272, 155);
             this.Controls.Add(this.updateBTN);
             this.Controls.Add(this.infoBTN);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.canaryExStartBTN);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.canaryExUpdateBTN);
             this.Controls.Add(this.percentageLBL);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.canaryStartBTN);
@@ -210,9 +210,9 @@ namespace XeniaUpdater_C
         private System.Windows.Forms.Button canaryUpdateBTN;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label percentageLBL;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button canaryExStartBTN;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button canaryExUpdateBTN;
         private System.Windows.Forms.Button infoBTN;
         private System.Windows.Forms.Button updateBTN;
     }
