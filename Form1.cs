@@ -12,8 +12,9 @@ namespace XeniaUpdater_C
             //Create form
             InitializeComponent();
 
-            Helper h = new Helper();
-            h.StartupTasks();
+            //Temp. disabling this as it is unsafe
+            //Helper h = new Helper();
+            //h.StartupTasks();
         }
 
         //Takes the parameters needed to update any branch of Xenia given the correct parameters
