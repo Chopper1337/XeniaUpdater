@@ -111,7 +111,7 @@ namespace XeniaUpdater_C
         private void infoBTN_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
-            f2.Show();
+            f2.ShowDialog();
         }
 
         private void updateBTN_Click(object sender, EventArgs e)
