@@ -104,10 +104,10 @@ namespace XeniaUpdater_C
         }
 
         //Updates XeniaUpdater
-        public void UpdateXeniaUpdater()
+        public void UpdateXeniaUpdater(string branch)
         {
             WebClient wc = new WebClient();
-            wc.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/Chopper1337/XeniaUpdater/main/bin/Debug/XeniaUpdater.exe"), "XeniaUpdater.Latest.exe");
+            wc.DownloadFileAsync(new Uri($"https://raw.githubusercontent.com/Chopper1337/XeniaUpdater/main/bin/{branch}/XeniaUpdater.exe"), "XeniaUpdater.Latest.exe");
 
             if (File.Exists($"XeniaUpdater.Latest.exe"))
             {

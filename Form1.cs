@@ -73,6 +73,7 @@ namespace XeniaUpdater_C
             canaryStartBTN.Enabled = enabled;
             canaryExUpdateBTN.Enabled = enabled;
             canaryExStartBTN.Enabled = enabled;
+            updateBTN.Enabled = enabled;
         }
 
         private void button1_Click(object sender, System.EventArgs e)
@@ -117,7 +118,7 @@ namespace XeniaUpdater_C
         private void updateBTN_Click(object sender, EventArgs e)
         {
             Helper h = new Helper();
-            h.UpdateXeniaUpdater();
+            h.UpdateXeniaUpdater("Debug");
         }
 
         private void button1_Click_2(object sender, EventArgs e)

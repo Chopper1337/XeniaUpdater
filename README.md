@@ -9,8 +9,8 @@ Small program made to manage Xenia emulator and its versions.
 # Features
 
 * Compatible with master branch and both canary branches of Xenia.
-* Downloads, extracts and starts Xenia in one click
-* Creates a backup of the last downloaded version of Xenia (xenia_master.zip and/or xenia_canary.zip)
+* Downloads and extracts latest builds of Xenia in one click
+* Creates a backup of the last downloaded version of Xenia
 
 # Info for anyone who plans to modify this code
 
