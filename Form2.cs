@@ -15,5 +15,15 @@ namespace XeniaUpdater_C
         {
             Process.Start("https://xenia.jp");
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/xenia-project");
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://discord.com/invite/Q9mxZf9");
+        }
     }
 }
