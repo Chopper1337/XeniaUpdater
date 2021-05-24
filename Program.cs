@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace XeniaUpdater
+namespace XeniaUpdater_C
 {
     static class Program
     {
