@@ -4,7 +4,7 @@ Small program made to manage Xenia emulator and its versions.
 # Releases
 
 * [**Stable**](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Release/XeniaUpdater.exe)
-* [Debug Main](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Debug/XeniaUpdater.exe)
+* [Debug](https://github.com/Chopper1337/XeniaUpdater/raw/main/bin/Debug/XeniaUpdater.exe)
 
 # Features
 
