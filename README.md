@@ -1,11 +1,6 @@
 # Unofficial Xenia Updater
 Small program made to manage Xenia emulator and its versions.
 
-
-# Releases
-
-* [Rewrite Debug](https://github.com/Chopper1337/XeniaUpdater/raw/Rewrite/bin/Debug/XeniaUpdater.exe)
-
 # Features
 
 * Compatible with master branch and both canary branches of Xenia.
