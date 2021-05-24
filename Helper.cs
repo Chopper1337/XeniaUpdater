@@ -126,9 +126,9 @@ namespace XeniaUpdater_C
                         $"echo Deleting {currentExecutableName}\n" +
                         $"del \"{currentExecutableFullPathName}\"\n" +
                         $"move XeniaUpdater.Latest.exe \"{currentExecutableFullPathName}\"\n" +
-                        $"{currentExecutableName}\n" +
                         $"echo XeniaUpdater has been updated under the name {currentExecutableName}.\necho This CMD window will not appear on next start and can be closed :)\n" +
-                        "del UpdateDownloaded.bat"); ;
+                        $"{currentExecutableName}\n" +
+                        "del UpdateDownloaded.bat");
                 }
             }
         }
