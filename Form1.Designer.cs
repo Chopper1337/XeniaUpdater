@@ -43,6 +43,7 @@ namespace XeniaUpdater_C
             this.canaryExUpdateBTN = new System.Windows.Forms.Button();
             this.infoBTN = new System.Windows.Forms.Button();
             this.updateBTN = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // masterUpdateBTN
@@ -156,7 +157,7 @@ namespace XeniaUpdater_C
             // 
             this.infoBTN.Location = new System.Drawing.Point(10, 123);
             this.infoBTN.Name = "infoBTN";
-            this.infoBTN.Size = new System.Drawing.Size(124, 23);
+            this.infoBTN.Size = new System.Drawing.Size(82, 23);
             this.infoBTN.TabIndex = 12;
             this.infoBTN.Text = "Information";
             this.infoBTN.UseVisualStyleBackColor = true;
@@ -164,19 +165,30 @@ namespace XeniaUpdater_C
             // 
             // updateBTN
             // 
-            this.updateBTN.Location = new System.Drawing.Point(135, 123);
+            this.updateBTN.Location = new System.Drawing.Point(180, 123);
             this.updateBTN.Name = "updateBTN";
-            this.updateBTN.Size = new System.Drawing.Size(124, 23);
+            this.updateBTN.Size = new System.Drawing.Size(80, 23);
             this.updateBTN.TabIndex = 13;
             this.updateBTN.Text = "Update";
             this.updateBTN.UseVisualStyleBackColor = true;
             this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(95, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Open Folder";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(272, 155);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.updateBTN);
             this.Controls.Add(this.infoBTN);
             this.Controls.Add(this.canaryExStartBTN);
@@ -215,6 +227,7 @@ namespace XeniaUpdater_C
         private System.Windows.Forms.Button canaryExUpdateBTN;
         private System.Windows.Forms.Button infoBTN;
         private System.Windows.Forms.Button updateBTN;
+        private System.Windows.Forms.Button button1;
     }
 }
 

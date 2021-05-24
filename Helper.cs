@@ -32,6 +32,11 @@ namespace XeniaUpdater_C
             }
         }
 
+        public void OpenInstallFolder()
+        {
+            Process.Start(currentExecutableFullPathName.Replace(currentExecutableName,""));
+        }
+
         //Extracts the zip
         public void ExtractBuild(string folderName, string zipName)
         {

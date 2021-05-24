@@ -121,5 +121,11 @@ namespace XeniaUpdater_C
             //Helper h = new Helper();
             //h.UpdateXeniaUpdater("Debug");
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Helper h = new Helper();
+            h.OpenInstallFolder();
+        }
     }
 }
