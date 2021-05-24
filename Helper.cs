@@ -122,7 +122,7 @@ namespace XeniaUpdater_C
                         "title Updating Xenia Updater\n" +
                         $"echo Killing {currentExecutableName}\n" +
                         $"taskkill /im {currentExecutableName}\n" +
-                        "timeout 2\n" +
+                        "timeout 1\n" +
                         $"echo Deleting {currentExecutableName}\n" +
                         $"del \"{currentExecutableFullPathName}\"\n" +
                         $"move XeniaUpdater.Latest.exe \"{currentExecutableFullPathName}\"\n" +
