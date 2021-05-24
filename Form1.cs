@@ -12,9 +12,8 @@ namespace XeniaUpdater_C
             //Create form
             InitializeComponent();
 
-            //Temp. disabling this as it is unsafe
-            //Helper h = new Helper();
-            //h.StartupTasks();
+            Helper h = new Helper();
+            h.StartupTasks();
         }
 
         //Takes the parameters needed to update any branch of Xenia given the correct parameters
@@ -117,9 +116,8 @@ namespace XeniaUpdater_C
 
         private void updateBTN_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("NYI","NYI");
-            //Helper h = new Helper();
-            //h.UpdateXeniaUpdater("Debug");
+            Helper h = new Helper();
+            h.UpdateXeniaUpdater();
         }
 
         private void button1_Click_2(object sender, EventArgs e)
