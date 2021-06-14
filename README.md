@@ -20,7 +20,7 @@ To add different builds of Xenia, add two new buttons, one for updating and the 
 
 There is no guarantee of stability with the debug release.
 
-If you run into any issues, message me on Discord **[IRB] Chopper#4291**.
+If you run into any issues, message me on Discord **Chopper#4291**.
 Try provide as much info as possible, screenshot of when the issue occurred and a screenshot of the directory the updater was in and so on.
 
 Thanks :)
