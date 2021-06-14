@@ -73,7 +73,7 @@ namespace XeniaUpdater_C
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(172, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Build date: 24/05/2021 1600 GMT";
+            this.label3.Text = "Build date: 14/06/2021 1400 GMT";
             // 
             // label4
             // 
@@ -91,7 +91,7 @@ namespace XeniaUpdater_C
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(108, 20);
             this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "[IRB] Chopper#4291";
+            this.textBox1.Text = "Chopper#4291";
             // 
             // label5
             // 
