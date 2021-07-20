@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System
 using System.Net;
 using System.Windows.Forms;
 
@@ -37,7 +37,7 @@ namespace XeniaUpdater_C
         public void StartXenia(string folderName, string exeName)
         {
             Helper h = new Helper();
-            h.StartProcess(exeName, folderName, true);
+            h.StartProcess(exeName, folderName);
         }
 
 
