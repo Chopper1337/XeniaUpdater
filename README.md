@@ -20,7 +20,11 @@ To add different builds of Xenia, add two new buttons, one for updating and the 
 
 There is no guarantee of stability with the debug release.
 
+Debug release will have the latest features.
+
 If you run into any issues, message me on Discord **Chopper#4291**.
 Try provide as much info as possible, screenshot of when the issue occurred and a screenshot of the directory the updater was in and so on.
+
+A log file should be generated with the last error the program had, provide this if possible.
 
 Thanks :)
