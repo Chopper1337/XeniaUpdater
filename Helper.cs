@@ -210,7 +210,7 @@ del UpdateDownloaded.bat");
                 }
                 else if (updateBatExists_c && !updateEXEExists_c)
                 {
-                    File.Delete("UpdateDownloaded.exe");
+                    File.Delete("UpdateDownloaded.bat");
                 }
 
 
