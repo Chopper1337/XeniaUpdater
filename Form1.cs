@@ -22,7 +22,14 @@ namespace XeniaUpdater_C
             Helper h = new Helper();
             h.CreateFolders(folderName);
             h.PreUpdateTask(folderName, zipFullName, exeName);
-            DownloadFile(url, zipFullName, folderName);
+            if (h.InternetAvailable() == true)
+            {
+                DownloadFile(url, zipFullName, folderName);
+            }
+            else
+            {
+                MessageBox.Show("Could not ping AppVeyor");
+            }
         }
 
 
