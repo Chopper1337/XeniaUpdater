@@ -127,6 +127,7 @@ namespace XeniaUpdater_C
                     //Usual update process
                     WebClient wc = new WebClient();
                     wc.DownloadFileAsync(new Uri($"https://raw.githubusercontent.com/Chopper1337/XeniaUpdater/main/bin/{branch}/XeniaUpdater.exe"), newExeLoc);
+                    wc.Dispose();
 
                     if (File.Exists(newExeLoc))
                     {
@@ -245,7 +246,7 @@ del UpdateDownloaded.bat");
         }
 
         //Bool to check for internet connection. Pings AppVeyor as you will need to connect to their servers eventually to use this application properly.
-        //This will never ping Google, Microsoft or the like.
+        //This will never ping Google, Microsoft (excluding GitHub) or the like.
         public bool InternetAvailable()
         {
             try
