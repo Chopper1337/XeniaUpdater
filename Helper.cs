@@ -124,13 +124,12 @@ namespace XeniaUpdater_C
                 }
                 else
                 {
+                    //Usual update process
                     WebClient wc = new WebClient();
                     wc.DownloadFileAsync(new Uri($"https://raw.githubusercontent.com/Chopper1337/XeniaUpdater/main/bin/{branch}/XeniaUpdater.exe"), newExeLoc);
 
                     if (File.Exists(newExeLoc))
                     {
-                        MessageBox.Show($"Latest version downloaded, please restart!", "Latest version downloaded :)");
-
                         using (FileStream strm = File.Create(newBatLoc))
                         using (StreamWriter sw = new StreamWriter(strm))
                         {
@@ -150,6 +149,7 @@ echo This CMD window will not appear on next start and can be closed :)
 {currentExecutableName}
 del {newBatLoc}");
                         }
+                        MessageBox.Show($"Latest version downloaded, please restart!", "Latest version downloaded :)");
                     }
                 }
             }
