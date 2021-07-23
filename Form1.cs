@@ -9,6 +9,10 @@ namespace XeniaUpdater_C
     /// Firstly, go to Form2.cs and change the buildDate string to the correct build date (Current date and time).
     /// Then open the version-{branch}.txt for the branch you are updating, change it to match the build date in Form2.cs (Without the \n).
     /// Near the bottom of this file (Form1.cs), change h.UpdateXeniaUpdater("branchHere") to the branch you are updating.
+    /// Finally, of course, change the build config in VS to build the correct version (Debug or Release).
+    /// 
+    /// If you are not the original developer of this software, be sure to update the GitHub links associated with the self updater such that
+    /// updates are pulled from your fork and not from the original repo.
     /// </summary>
     public partial class Form1 : Form
     {
