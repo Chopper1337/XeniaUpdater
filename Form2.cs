@@ -6,9 +6,13 @@ namespace XeniaUpdater_C
 {
     public partial class Form2 : Form
     {
+        //KEEP \N AT THE END. GITHUB RETURNS TEXT FILES WITH THIS FOR SOME REASON
+        //UPDATE CHECK WILL NOT WORK IF REMOVED.
+        public string buildDate = "Build date: 23/07/2021 1800 GMT\n";
         public Form2()
         {
             InitializeComponent();
+            label3.Text = buildDate;
         }
 
         private void label1_Click(object sender, EventArgs e)
