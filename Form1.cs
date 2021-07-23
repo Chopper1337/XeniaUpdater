@@ -4,6 +4,12 @@ using System.Windows.Forms;
 
 namespace XeniaUpdater_C
 {
+    /// <summary>
+    /// Correctly updating Xenia Updater:
+    /// Firstly, go to Form2.cs and change the buildDate string to the correct build date (Current date and time).
+    /// Then open the version-{branch}.txt for the branch you are updating, change it to match the build date in Form2.cs (Without the \n).
+    /// Near the bottom of this file (Form1.cs), change h.UpdateXeniaUpdater("branchHere") to the branch you are updating.
+    /// </summary>
     public partial class Form1 : Form
     {
 
