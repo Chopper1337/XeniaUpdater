@@ -71,9 +71,8 @@ namespace XeniaUpdater_C
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(79, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 13);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Build date: 21/07/2021 0000 GMT";
             // 
             // label4
             // 
