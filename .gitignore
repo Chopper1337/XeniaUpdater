@@ -8,3 +8,4 @@ bin/Debug/XeniaCanary/xenia_canary.exe
 bin/Debug/XeniaCanary/xenia_canary.zip
 bin/Debug/response.txt
 bin/Debug/UploadFile.bat
+.vscode/launch.json
