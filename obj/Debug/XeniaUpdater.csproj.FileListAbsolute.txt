@@ -20,3 +20,14 @@ C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csproj.Generate
 C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csproj.CoreCompileInputs.cache
 C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.exe
 C:\Users\Joseph\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.pdb
+E:\VisualStudioSource\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.exe
+E:\VisualStudioSource\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.pdb
+E:\VisualStudioSource\source\repos\XeniaUpdater\bin\Debug\XeniaUpdater.exe.config
+E:\VisualStudioSource\source\repos\XeniaUpdater\bin\Debug\XeniaUpdater.exe
+E:\VisualStudioSource\source\repos\XeniaUpdater\bin\Debug\XeniaUpdater.pdb
+E:\VisualStudioSource\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csprojAssemblyReference.cache
+E:\VisualStudioSource\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater_C.Form1.resources
+E:\VisualStudioSource\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater_C.Form2.resources
+E:\VisualStudioSource\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.Properties.Resources.resources
+E:\VisualStudioSource\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csproj.GenerateResource.cache
+E:\VisualStudioSource\source\repos\XeniaUpdater\obj\Debug\XeniaUpdater.csproj.CoreCompileInputs.cache

@@ -135,7 +135,7 @@ namespace XeniaUpdater_C
         private void updateBTN_Click(object sender, EventArgs e)
         {
             Helper h = new Helper();
-            h.UpdateXeniaUpdater("Debug");
+            h.UpdateXeniaUpdater("Release");
         }
 
         private void button1_Click_2(object sender, EventArgs e)
