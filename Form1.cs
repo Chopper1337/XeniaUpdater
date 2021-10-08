@@ -38,7 +38,7 @@ namespace XeniaUpdater_C
             }
             else
             {
-                MessageBox.Show("Could not ping AppVeyor");
+                MessageBox.Show("Could not ping AppVeyor. Please check your internet connection.");
             }
         }
 
