@@ -8,7 +8,7 @@ namespace XeniaUpdater_C
     {
         //KEEP \N AT THE END. GITHUB RETURNS TEXT FILES WITH THIS FOR SOME REASON
         //UPDATE CHECK WILL NOT WORK IF REMOVED.
-        public string buildDate = "Build date: 08/10/2021 2100 GMT\n";
+        public string buildDate = "Build date: 08/10/2021 2110 GMT\n";
         public Form2()
         {
             InitializeComponent();
