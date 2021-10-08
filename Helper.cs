@@ -60,6 +60,11 @@ namespace XeniaUpdater_C
         //This file will not infintely be written to.
         void LogError(string e, string fileName)
         {
+            if (!File.Exists(fileName))
+            {
+                File.Create(fileName);
+            }
+
             double length = new System.IO.FileInfo(fileName).Length;
             length = length / 1000;
             byte limit = 200;
