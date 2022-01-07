@@ -255,7 +255,6 @@ del UpdateDownloaded.bat");
         }
 
         //Bool to check for internet connection. Pings AppVeyor as you will need to connect to their servers eventually to use this application properly.
-        //This will never ping Google, Microsoft (excluding GitHub) or the like.
         public bool InternetAvailable()
         {
             try
