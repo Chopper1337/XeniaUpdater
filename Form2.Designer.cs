@@ -90,7 +90,7 @@ namespace XeniaUpdater_C
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(108, 20);
             this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "Chopper#4291";
+            this.textBox1.Text = "[removed]";
             // 
             // label5
             // 
