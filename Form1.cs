@@ -95,7 +95,7 @@ namespace XeniaUpdater_C
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            string url = "https://ci.appveyor.com/api/projects/benvanik/xenia/artifacts/xenia_master.zip?branch=master&job=Configuration%3A%20Release&pr=false";
+            string url = "https://github.com/xenia-project/release-builds-windows/releases/latest/download/xenia_master.zip";
             UpdateXenia("XeniaMaster", url, "xenia_master.zip", "xenia.exe");
         }
 
