@@ -11,7 +11,7 @@ namespace XeniaUpdater_C
     /// Near the bottom of this file (Form1.cs), change h.UpdateXeniaUpdater("branchHere") to the branch you are updating.
     /// Finally, of course, change the build config in VS to build the correct version (Debug or Release).
     ///  
-    /// If you are not the original developer of this software, be sure to update the GitHub links associated with the self updater such that
+    /// If you are not the original developer of this software (Chopper1337), be sure to update the GitHub links associated with the self updater such that
     /// updates are pulled from your fork and not from the original repo.
     /// </summary>
     public partial class Form1 : Form
@@ -88,8 +88,6 @@ namespace XeniaUpdater_C
             masterStartBTN.Enabled = enabled;
             canaryUpdateBTN.Enabled = enabled;
             canaryStartBTN.Enabled = enabled;
-            canaryExUpdateBTN.Enabled = enabled;
-            canaryExStartBTN.Enabled = enabled;
             updateBTN.Enabled = enabled;
         }
 
@@ -113,17 +111,6 @@ namespace XeniaUpdater_C
         private void button3_Click(object sender, System.EventArgs e)
         {
             StartXenia("XeniaCanary", "xenia_canary");
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            string url = "https://ci.appveyor.com/api/projects/chris-hawley/xenia-canary/artifacts/xenia_canary.zip?branch=canary_experimental&job=Configuration:%20Release&pr=false";
-            UpdateXenia("XeniaCanaryEx", url, "xenia_canary.zip", "xenia_canary.exe");
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            StartXenia("XeniaCanaryEx", "xenia_canary");
         }
 
         private void infoBTN_Click(object sender, EventArgs e)

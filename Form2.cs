@@ -8,7 +8,7 @@ namespace XeniaUpdater_C
     {
         //KEEP \N AT THE END. GITHUB RETURNS TEXT FILES WITH THIS FOR SOME REASON
         //UPDATE CHECK WILL NOT WORK IF REMOVED.
-        public string buildDate = "Build date: 10/03/2023 1620 GMT\n";
+        public string buildDate = "Build date: 10/03/2023 1820 GMT\n";
         public Form2()
         {
             InitializeComponent();
@@ -28,6 +28,11 @@ namespace XeniaUpdater_C
         private void label8_Click(object sender, EventArgs e)
         {
             Process.Start("https://discord.com/invite/Q9mxZf9");
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Chopper1337/XeniaUpdater");
         }
     }
 }
