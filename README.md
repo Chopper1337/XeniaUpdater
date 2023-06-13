@@ -10,7 +10,7 @@ Expect the debug version to have the latest features implemented in an ugly way 
 
 # Features
 
-* Compatible with master branch and both canary branches of Xenia (PR and Experimental).
+* Compatible with master and canary branches of Xenia.
 * Downloads and extracts latest builds of Xenia in one click.
 * Creates a backup of the last downloaded version of Xenia.
 
