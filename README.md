@@ -16,6 +16,10 @@ Expect the debug version to have the latest features implemented in an ugly way 
 
 # Info for anyone who plans to modify this code
 
+I highly recommend that you use [XeniaUpdater2](https://github.com/Chopper1337/XeniaUpdater2) to make changes. It should be much easier to work with.
+
+If you wish to add other Xenia builds to this version of Xenia Updater, here is the process for that:
+
 To add different builds of Xenia, add two new buttons, one for updating and the other for launching that build. In the click event for those buttons, use the UpdateXenia and StartXenia methods to pass required parameters to update and start respectively.
 
 Add your two new buttons to the ToggleButtons method.
