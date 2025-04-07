@@ -14,15 +14,50 @@ Expect the debug version to have the latest features implemented in an ugly way 
 * Downloads and extracts latest builds of Xenia in one click.
 * Creates a backup of the last downloaded version of Xenia.
 
-# Info for anyone who plans to modify this code
+# Developers
 
-I highly recommend that you use [XeniaUpdater2](https://github.com/Chopper1337/XeniaUpdater2) to make changes. It should be much easier to work with.
+## Some advice before proceeding
 
-If you wish to add other Xenia builds to this version of Xenia Updater, here is the process for that:
+I highly recommend that you use [XeniaUpdater2](https://github.com/Chopper1337/XeniaUpdater2) or [XeniaLauncher-CLI](https://github.com/Chopper1337/XeniaLauncher-CLI) to make changes. They should be significantly easier to work with.
 
-To add different builds of Xenia, add two new buttons, one for updating and the other for launching that build. In the click event for those buttons, use the UpdateXenia and StartXenia methods to pass required parameters to update and start respectively.
+## Adding other builds of Xenia
 
-Add your two new buttons to the ToggleButtons method.
+1. Add two new buttons (Update and Launch)
+2. Create click events for these buttons
+3. Use the `UpdateXenia` and `StartXenia` functions in the click event functions
+4. Add your newly created buttons to the `ToggleButtons` functions
+
+Examples:
+
+```
+// Update Xenia Master button click event
+private void button1_Click(object sender, System.EventArgs e) {
+    // URL to download the latest build ZIP
+    string url = "https://github.com/xenia-project/release-builds-windows/releases/latest/download/xenia_master.zip";
+    // Update the build providing the folder name, url, ZIP name and executable name
+    UpdateXenia("XeniaMaster", url, "xenia_master.zip", "xenia.exe");
+}
+
+// Start Xenia Master button click event
+private void button2_Click(object sender, System.EventArgs e) {
+    // Start the build providing the folder name and executable name (excluding extension)
+    StartXenia("XeniaMaster", "xenia");
+}
+
+```
+
+```
+// Enables or disabled all buttons in the application
+void ToggleButtons(bool enabled) {
+    masterUpdateBTN.Enabled = enabled;
+    masterStartBTN.Enabled = enabled;
+    canaryUpdateBTN.Enabled = enabled;
+    canaryStartBTN.Enabled = enabled;
+    // Add your buttons here
+
+    updateBTN.Enabled = enabled;
+}
+```
 
 # Note for "Debug" release
 
